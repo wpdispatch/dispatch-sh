@@ -66,8 +66,8 @@ setup:
   db: true
   wp: true
   settings: true
-  theme: false
-  plugins: false
+  theme: true
+  plugins: true
   cleanup: true
     comment: true
     posts: true
