@@ -9,6 +9,7 @@
 # https://wpdistillery.org
 
 DISPATCH_YML=dispatch-sh.yml
+DISPATCH_SH=dispatch-sh.sh
 
 func_dispatch_sh() {
   func_credits
@@ -228,11 +229,7 @@ func_finished() {
   if [ "$run" == y ]; then
       rm $DISPATCH_YML
   fi
-  printf "would you like to remove the shell script? [y/n]: "
-  read -e run
-  if [ "$run" == y ]; then
-      rm -- "$0"
-  fi
+  echo "you will need to remove ${DISPATCH_SH} manually"
 }
 
 func_parse_yaml() {
