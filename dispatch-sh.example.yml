@@ -32,8 +32,8 @@ admin:
 
 # scotch box db access
 db:
-  name: dispatch_test_v1
-  host: 192.168.0.7
+  name: dispatch
+  host: localhost
   user: root
   pass: root
   prefix: wp_
@@ -102,7 +102,7 @@ plugins_inactive:
 # if you don't want the setup to run all tasks, set them to false
 
 setup:
-  db: false
+  db: true
   wp: true
   settings: true
   theme: true
