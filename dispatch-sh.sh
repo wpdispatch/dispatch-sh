@@ -29,7 +29,7 @@ func_dispatch_sh() {
   # plugin
   func_plugin
   # finished
-  func finished
+  func_finished
 }
 
 func_credits() {
