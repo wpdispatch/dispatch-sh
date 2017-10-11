@@ -15,9 +15,8 @@ DEFAULT='\033[0m'
 
 # HELPER
 function catch_continue() {
-  printf "\n${WARNING}>> do you want to continue? [y/n]:  ${DEFAULT}\n"
-  read -e prompt_continue
-  if [ ! "$prompt_continue" == y ] ; then
+  read -p "$(echo -e "${WARNING}do you want to continue? [y/n] ${DEFAULT}")" -n 1 -r
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     printf "\n${ERROR}>> exiting  ${DEFAULT}\n"
     exit 1
   else
