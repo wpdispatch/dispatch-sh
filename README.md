@@ -1,12 +1,21 @@
 # dispatch-sh
 
-## Usage
-
-curl -L -o 'dispatch-sh.sh' https://raw.githubusercontent.com/wpdispatch/dispatch-sh/master/dispatch-sh.sh && bash dispatch-sh.sh && rm dispatch-sh.sh
-
 ## About
 
-* Author: [Flurin Dürst](https://github.com/flurinduerst) - [Twitter](https://twitter.com/flurinduerst)
-* Contributors:
-  * [@ShaneShipston](https://github.com/ShaneShipston)
-  * [@drawcard](https://github.com/drawcard)
+Shell script for setting up a new WordPress project
+
+## Usage
+
+`cd` to the root of your new project
+```sh
+curl -v --fail --output 'dispatch-sh.sh' https://raw.githubusercontent.com/wpdispatch/dispatch-sh/master/dispatch-sh.sh
+curl -v --fail --output 'dispatch-sh.yml' https://raw.githubusercontent.com/wpdispatch/dispatch-sh/master/dispatch-sh.example.yml
+```
+edit `dispatch-sh.yml`
+```sh
+bash dispatch-sh.sh
+```
+
+## Credits
+
+this project was inspired by [WPDistillery](https://github.com/flurinduerst/WPDistillery)
