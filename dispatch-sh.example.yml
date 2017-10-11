@@ -13,7 +13,7 @@
 #################################################################
 
 # WordPress folder
-wpfolder: public
+wpfolder: ./
 
 # WordPress version
 wpversion: latest
