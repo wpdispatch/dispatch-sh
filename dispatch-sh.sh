@@ -4,7 +4,7 @@ set -e
 
 # CONFIG
 DISPATCH_YML=dispatch-sh.yml
-REMOTE_DISPATCH_YML=https://raw.githubusercontent.com/wpdispatch/dispatch/master/dispatch-sh.example.yml
+REMOTE_DISPATCH_YML=https://raw.githubusercontent.com/wpdispatch/dispatch-sh/master/dispatch-sh.example.yml
 
 # COLOR
 ERROR="\033[0;31m"
