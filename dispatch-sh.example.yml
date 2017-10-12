@@ -68,6 +68,7 @@ setup:
   settings: true
   theme: true
   plugins: true
+  tgmpa: true
   cleanup: true
     comment: true
     posts: true

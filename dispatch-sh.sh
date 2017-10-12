@@ -11,6 +11,8 @@
 DISPATCH_YML=dispatch-sh.yml
 DISPATCH_SH=dispatch-sh.sh
 
+WP_CLI_TGMPA_PLUGIN_COMMAND=wp-cli-tgmpa-plugin-command.php
+
 func_dispatch_sh() {
   func_credits
   # yaml
@@ -27,6 +29,8 @@ func_dispatch_sh() {
   func_theme
   # cleanup
   func_cleanup
+  # tgmpa
+  func_tgmpa
   # plugin
   func_plugin
   # finished
@@ -204,6 +208,16 @@ func_cleanup() {
   fi
 }
 
+func_tgmpa() {
+  func_divider 'TGMPA (TGM Plugin Activation)'
+  if $CONF_setup_tgmpa ; then
+    curl -v --fail --output $WP_CLI_TGMPA_PLUGIN_COMMAND https://raw.githubusercontent.com/itspriddle/wp-cli-tgmpa-plugin/master/command.php
+    wp --require=$WP_CLI_TGMPA_PLUGIN_COMMAND tgmpa-plugin install --all-required --activate
+  else
+    echo "[info]: skipping tgmpa"
+  fi
+}
+
 func_plugins() {
   func_divider 'plugins'
   if $CONF_setup_plugins ; then
@@ -228,6 +242,11 @@ func_finished() {
   read -e run
   if [ "$run" == y ]; then
       rm $DISPATCH_YML
+  fi
+  printf "would you like to remove ${WP_CLI_TGMPA_PLUGIN_COMMAND}? [y/n]: "
+  read -e run
+  if [ "$run" == y ]; then
+      rm $WP_CLI_TGMPA_PLUGIN_COMMAND
   fi
   echo "you will need to remove ${DISPATCH_SH} manually"
 }
